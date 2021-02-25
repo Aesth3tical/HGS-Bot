@@ -1,0 +1,16 @@
+{
+    "name": "historicalgovsim",
+    "version": "1.0.0",
+    "description": "Bot in the HistoricalGovSim Discord Server",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "license": "ISC",
+    "author": "Aesthetical#1000",
+    "dependencies": {
+        "discord.js": "^12.5.1",
+        "quick.db": "^7.1.2",
+        "fs": "^0.0.1-security"
+    }
+}
