@@ -36,12 +36,7 @@ client.on('message', async (message) => {
 
     let args = message.content.slice(prefix.length).trim().split(/ +/);
 
-    let customs = localData.get(`custom-commands`);
-    if (!customs) return;
-    let custom = await customs.find(c => c.name === `${args}`);
-    if (custom) {
-        message.channel.send(custom.command);
-    } else if (!custom) {
+    function go() {
         let commandName = args.shift().toLowerCase();
         const command = client.commands.get(commandName);
         if (!command) return;
@@ -65,6 +60,17 @@ client.on('message', async (message) => {
         localData.set(`${user}.cooldown`, now);
         setTimeout(() => localData.delete(`${user}.cooldown`), cooldownAmount);
         command.execute(client, message, args);
+    }
+
+    let customs = localData.get(`custom-commands`);
+    if (!customs) {
+        return go()
+    }
+    let custom = await customs.find(c => c.name === `${args}`);
+    if (custom) {
+        message.channel.send(custom.command);
+    } else if (!custom) {
+        go()
     }
 });
 
