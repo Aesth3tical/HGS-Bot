@@ -3,6 +3,7 @@ let main = require('./../index.js');
 exports.editLog = async function (oldMessage, newMessage, Discord) {
     if (oldMessage.channel.id === "813551754745872404") return
     if (oldMessage.content === newMessage.content) return;
+    
     let modlogs = main.client.channels.cache.get('813961513382576148');
 
     const editEmbed = new Discord.MessageEmbed()

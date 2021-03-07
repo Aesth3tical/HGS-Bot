@@ -19,7 +19,7 @@ module.exports = {
             if (!findUser) {
                 const notInServer = new Discord.MessageEmbed()
                     .setColor('RED')
-                    .setDescription(`The given user is not in the server, or it may be an invalid user/userID. If you feel this is a bug, please ping <@559200051629654026>\n\`\`\`em.mute <mention/userID>\`\`\``)
+                    .setDescription(`The given user is not in the server, or it may be an invalid user/userID. If you feel this is a bug, please ping <@559200051629654026>\n\`\`\`.unjail <mention/userID>\`\`\``)
                 return message.channel.send(notInServer)
             } else if (findUser) {
                 member = findUser;

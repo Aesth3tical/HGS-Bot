@@ -11,6 +11,7 @@
     "dependencies": {
         "discord.js": "^12.5.1",
         "quick.db": "^7.1.2",
-        "fs": "^0.0.1-security"
+        "fs": "^0.0.1-security",
+        "generate-password": "^1.6.0"
     }
 }
